@@ -23,4 +23,15 @@ $(document).ready(function () {
             }
         }
     });
+
+     // Efecto de desplazamiento suave para los enlaces de navegación
+     $('a[href^="#"]').on('click', function (event) {
+        event.preventDefault();
+        
+        var target = $(this).attr('href');
+        $('html, body').animate({
+            scrollTop: $(target).offset().top
+        }, 1000); // Duración del desplazamiento en milisegundos
+    });
+
 });
